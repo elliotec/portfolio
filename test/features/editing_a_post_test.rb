@@ -3,8 +3,8 @@ require "test_helper"
 feature "editing a post" do
   scenario "submit updates to an existing post" do
     # Given an existing post
-    post = Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
-    visit post_path(post)
+   
+    visit posts_path
     # When I click and edit submit changed data
     click_on "Edit"
     fill_in "Title", with: "Becoming a Web Developer"
