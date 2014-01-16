@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
 
 gem 'rails', '4.0.2'
 gem 'sqlite3'
@@ -13,4 +12,8 @@ gem 'minitest-rails-capybara'
 
 group :doc do
   gem 'sdoc', require: false
+end
+
+group :test do
+  gem 'turn'
 end
