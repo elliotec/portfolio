@@ -9,7 +9,7 @@ feature "Creating a post" do
     # When I submit the form
     click_on "Create Post"
     # Then a new post should be created and displayed
-    page.text.must_include "Post was succesfully created"
+    page.text.must_include "Post was successfully created"
     page.text.must_include posts(:cr).title
   end
 end

@@ -6,7 +6,8 @@ feature "visiting the post index" do
     
     # When I visit /posts
     visit posts_path
+
     # Then the existing posts should be loaded
-    page.text.must_include "Becoming a Code Fellow"
+    page.text.must_include posts(:anything_i_want).title
   end
 end
