@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
+//= main
+//= plugin
+//= tweets
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
