@@ -13,8 +13,8 @@ Bundler.require(:default, Rails.env)
 
 module Portfolio2
   class Application < Rails::Application
-
-    
+    I18n.enforce_available_locales = false
+    config.assets.paths << Rails.root.join("app", "assets", "fonts", "font-awesome")
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
