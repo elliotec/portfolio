@@ -1,7 +1,7 @@
 README
 ======
 
-
+[![Build Status](https://travis-ci.org/elliotec/portfolio.png?branch=master)](https://travis-ci.org/elliotec/portfolio)
 
 This is the beginning of a rails app for a personal portfolio project we are doing in [Code Fellows](http://www.codefellows.org). I just added the infancy of blogging functionality at /posts.
 
@@ -17,3 +17,6 @@ And here is one of the original posts page:
 
 Here is the root as of 1-16-14:
 ![Root screenshot](https://www.dropbox.com/s/qgrwxzc3dnow8vy/rootshot.png?dl=1 "Root screenshot")
+
+Bottom of index at 1-19-14:
+![Index screenshot](https://www.dropbox.com/s/t56o4y3h915qu6i/iconshot.png?dl=1 "Index screenshot")
