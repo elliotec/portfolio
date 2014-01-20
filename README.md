@@ -3,9 +3,11 @@ README
 
 [![Build Status](https://travis-ci.org/elliotec/portfolio.png?branch=master)](https://travis-ci.org/elliotec/portfolio)
 
-This is the beginning of a rails app for a personal portfolio project we are doing in [Code Fellows](http://www.codefellows.org). I just added the infancy of blogging functionality at /posts.
+This is the beginning of a rails app for a personal portfolio project we are doing in [Code Fellows](http://www.codefellows.org).
 
-The functionality is still quite simple: Enjoy looking at a picture of me on the index, or you can navigate to /posts and CRUD some posts if you so desire.
+The functionality is still quite simple: Enjoy looking at my profile on the index, or you can navigate to /posts and CRUD some posts if you so desire.
+
+The app auto-deploys to Heroku when the build passes with Travis, so I can ensure I don't push bugs to production.
 
 I am going to log screenshots as I progress in the site for my own enjoyment.
 
