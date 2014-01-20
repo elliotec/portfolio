@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "portfolio" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Michael Elliott" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,6 +13,11 @@
   </head>
 
   <body id="top">
+    <% flash.each do |key, value| %>
+     <div class="alert-box round <%= flash_class(key) %>">
+        <%= value %>
+     </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
