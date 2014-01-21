@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+
   def index
     @projects = Project.all
   end
@@ -31,6 +32,14 @@ class ProjectsController < ApplicationController
     if @project.update_attributes(project_params)
       redirect_to @project, notice: 'Project was successfully updated'
     else render :edit
+    end
+  end
+
+  def destroy
+    @project.destroy
+    respond_to do |format|
+      format.html { redirect_to projects_url }
+      format.json { head :no_content }
     end
   end
 
