@@ -8,7 +8,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'minitest-rails-capybara'
-gem 'foundation-rails', github: 'codefellows/foundation-rails'
+gem 'foundation-rails', '~> 5.0.3'
+gem 'better_errors'
+gem 'devise', git: "git://github.com/plataformatec/devise.git"
 
 group :doc do
   gem 'sdoc', require: false
@@ -20,7 +22,7 @@ end
 
 group :test do
   gem 'turn'
-  
+  gem 'launchy'
 end
 
 group :production do
