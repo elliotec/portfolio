@@ -13,6 +13,5 @@
  *= require foundation_and_overrides
  *= require font-awesome.min
  *= require main
- *= require csslider
  *= require_tree .
  */
