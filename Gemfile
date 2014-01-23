@@ -11,6 +11,7 @@ gem 'minitest-rails-capybara'
 gem 'foundation-rails', '~> 5.0.3'
 gem 'better_errors'
 gem 'devise', git: "git://github.com/plataformatec/devise.git"
+gem 'faker'
 
 group :doc do
   gem 'sdoc', require: false

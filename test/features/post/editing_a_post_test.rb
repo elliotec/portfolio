@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "editing a post" do
   scenario "submit updates to an existing post" do
+    sign_in
     # Given an existing post
     visit post_path(posts(:cr))
 
