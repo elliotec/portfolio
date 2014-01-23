@@ -7,6 +7,8 @@ feature "try to sign up as a user" do
     fill_in "Password", with: "joyfulsecretjesus"
     fill_in "Password confirmation", with: "joyfulsecretjesus"
     page.find("[type='submit']").click
-    page.text.must_include "successfully"
+    click_on "Sign out"
+    visit edit_user_registration_path
+    page.text.must_include "before continuing"
   end
 end
