@@ -7,7 +7,6 @@ feature "sign in as an existing user" do
     fill_in "Password", with: "password1"
     click_on "Sign in"
     #page.find("[type='submit']").click
-    save_and_open_page
     page.text.must_include "successfully"
   end
 end

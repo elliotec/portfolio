@@ -4,6 +4,8 @@ require "rails/test_help"
 require "minitest/rails/capybara"
 require "turn"
 require "minitest/pride"
+require "simplecov"
+SimpleCov.start 'rails'
 
 class ActiveSupport::TestCase
   fixtures :all
