@@ -82,13 +82,19 @@ a {
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
 	font-family: "Raleway-Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	color: #E8E8E8;
 }
+
+h4 {
+	font-family: "Raleway-Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #595959;
+}
+
 p {
 	font-size: 0.875rem;
 }

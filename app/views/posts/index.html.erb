@@ -1,3 +1,16 @@
+ <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+ <% else %>
+    <p>
+      <%= link_to "Log in", new_user_session_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
+    </p>  
+ <% end %>
+<% flash.each do |key, value| %>
+  <div class="alert-box round <%= flash_class(key) %>">
+        <%= value %>
+  </div> 
+<% end %>
 <h1>Listing posts</h1>
 
 <table>
@@ -16,9 +29,10 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to 'Show', post, class: "button tiny" %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), class: "button tiny" %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "button tiny" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path, class: "button_radius" %>
+<%= link_to 'New Post', new_post_path, class: "button alert" %>

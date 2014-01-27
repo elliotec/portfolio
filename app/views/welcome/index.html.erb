@@ -4,7 +4,6 @@
       <div class="medium-12 columns">
 
         <h1>Web Developer &amp; Designer</h1>
-        <p>My name is Michael Elliott.<br>I am from Salt Lake City, Utah, currently in Seattle. My hobbies include making music, programming, rock climbing, snowboarding, and video games. I have a dog, a cat, and a girlfriend. They are the best.</p>
 
         <p><a href="#contact" class="button small alert radius">Hit me up</a></p>
 
@@ -18,7 +17,7 @@
   <section id="portfolio" class="portfolio-wrapper">
     <div class="row">
       <div class="medium-12 columns">
-        <h3>My Recent Projects</h3>
+        <h4>My Recent Projects</h4>
         <div class="line"></div>
         <div class="clearfix"></div>
         <div class="portfolio-list">
@@ -183,15 +182,15 @@
           
           <h6>HTML5</h6>
           <div class="progress success round">
-            <span class="meter" style="width: 90%"></span>
+            <span class="meter" style="width: 85%"></span>
           </div><!-- /.progress -->
           
           <h6>CSS3</h6>
           <div class="progress success round">
-            <span class="meter" style="width: 90%"></span>
+            <span class="meter" style="width: 80%"></span>
           </div><!-- /.progress -->
           
-          <h6>Javascript</h6>
+          <h6>jQuery</h6>
           <div class="progress round">
             <span class="meter" style="width: 80%"></span>
           </div><!-- /.progress -->
@@ -201,7 +200,7 @@
         <div class="medium-4 columns text-center">
           
           <div class="col-desc">
-            <p>Cupcake ipsum dolor sit amet sweet jelly-o gummies unerdwear.com. Sweet roll toffee tiramisu. Chocolate jujubes dessert topping muffin pudding marzipan. Croissant chocolate cake unerdwear.com tart wafer cupcake.</p>
+            <p>My name is Michael Elliott.<br>I am from Salt Lake City, Utah, currently in Seattle. I'm a full-stack web developer and designer. Some of my other hobbies include making music, electronics, rock climbing, snowboarding, and video games. I have a dog, a cat, and a girlfriend. They are the best.</p>
 
             <img src="assets/avatar.jpg" alt="">
           </div><!-- ./col-desc -->
@@ -210,19 +209,19 @@
 
         <div class="medium-4 columns">
 
-          <h6>Jquery</h6>
+          <h6>Ruby on Rails</h6>
           <div class="progress medium-12 round">
-            <span class="meter" style="width: 80%"></span>
+            <span class="meter" style="width: 90%"></span>
           </div><!-- /.progress -->
           
-          <h6>Photoshop</h6>
+          <h6>Linux/Unix</h6>
           <div class="progress medium-12 alert round">
-            <span class="meter" style="width: 70%"></span>
+            <span class="meter" style="width: 90%"></span>
           </div><!-- /.progress -->
           
-          <h6>PHP &amp; MySQL</h6>
+          <h6>Git &amp; CLI</h6>
           <div class="progress medium-12 alert round">
-            <span class="meter" style="width: 70%"></span>
+            <span class="meter" style="width: 85%"></span>
           </div><!-- /.progress -->
           
         </div><!-- /.medium-4 .columns -->
@@ -238,36 +237,11 @@
 
 
   <!-- LATEST TWEETS -->
-  <section class="tweets-wrapper">
+  <section class="blog-wrapper">
 
     <div class="row">
 
       <div class="medium-12 columns">
-
-        <%= image_tag ("twitter-bird.png") %>
-
-        <div id="tweets"></div>
-        <script>
-          window.onload = function(){
-            twitterFetcher.fetch(
-              '829913083',     // replace to your id twitter app
-              'tweets',           // div id
-              1,                // num tweets
-              true,             // set true if you want urls and hash
-              false,              // Set false if you dont want user photo
-              false,              // Set false if you dont want time of tweet to show.
-              d,                // Format tweet date
-              false,              // Show retweets or not.
-              d,                // function to call when data is ready.
-              false             // Show links for reply, retweet, favourite.
-            );
-            var d = function(){return null};  // nothing function
-          }   
-        </script>
-        <script src="assets/tweets.js"></script>
-        
-        <div class="clearfix"></div>
-        <p><a href="#" class="button tiny radius">Follow @elliotecweb</a></p>
         
       </div><!-- /.medium-12 .columns -->
 

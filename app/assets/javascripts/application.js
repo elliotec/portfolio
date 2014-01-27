@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require foundation
 //= require plugin
-//= require tweets
 //= require main
 //= require turbolinks
 //= require_tree .
