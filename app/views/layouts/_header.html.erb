@@ -12,14 +12,26 @@
         </ul><!-- /.title-area -->
         <section class="top-bar-section">
           <!-- Right Nav Section -->
+
           <ul class="right">
             <li><a href="#top">Home</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>              
+            <li><a href="#contact">Contact</a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
           </ul><!-- /.right -->            
         </section><!-- /.top-bar-section -->        
       </nav><!-- /.top-bar -->      
-    </div><!-- /.row -->    
+    </div><!-- /.row -->
   </header><!-- /.masthead -->
   <!-- TOP BAR -->
+   <% flash.each do |key, value| %>
+     <div class="alert-box round <%= flash_class(key) %>">
+     <%= value %>
+   </div>
+    <% end %>

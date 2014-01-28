@@ -1,7 +1,7 @@
 cr:
   title: Code Rails
   body: This is how I learned web development!
-  author: us
+  author: author
 
 anything_i_want:
   title: <%= Faker::Name.name %>
@@ -12,4 +12,3 @@ http:
   title: <%= Faker::Name.name %>
   body: Its all about the request-response cycle!
   author: us
-

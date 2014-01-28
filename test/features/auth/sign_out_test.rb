@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "try to sign up as a user" do
-  scenario "click the sign up link" do
+feature "try to sign out as a user" do
+  scenario "click the sign out link" do
     visit new_user_registration_path
     fill_in "Email", with: "judas@thebible.com"
     fill_in "Password", with: "password1"
