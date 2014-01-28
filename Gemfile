@@ -13,6 +13,7 @@ gem 'better_errors'
 gem 'devise', git: "git://github.com/plataformatec/devise.git"
 gem 'faker'
 gem 'simplecov'
+gem 'pundit'
 
 group :doc do
   gem 'sdoc', require: false

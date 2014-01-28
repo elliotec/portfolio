@@ -1,4 +1,4 @@
-class PostPolicy
+class PostPolicy < ApplicationPolicy
   attr_accessor :user, :post
 
   def initialize(user, post)
@@ -7,6 +7,9 @@ class PostPolicy
   end
 
   def publish?
-    @user.role == "editor"
+    @user.editor?
+  end
+
+  class Scope
   end
 end
