@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
   end
 
   def new
@@ -53,4 +54,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body, (:published if PostPolicy.new(current_user, @post).publish?))
     end
+
 end

@@ -1,4 +1,6 @@
 Portfolio2::Application.routes.draw do
+  resources :comments
+
   devise_for :users
   resources :posts
   resources :projects

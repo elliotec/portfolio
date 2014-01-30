@@ -7,9 +7,21 @@ class PostPolicy < ApplicationPolicy
   end
 
   def publish?
-    @user.editor?
+    if @user
+     @user.editor?
+   end
   end
 
-  class Scope
+  def destroy?
+    if @user
+      @user.editor?
+    end
   end
+
+  def update?
+    if @user
+      @user.editor?
+    end
+  end
+
 end

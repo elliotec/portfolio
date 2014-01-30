@@ -8,7 +8,7 @@ feature "Deleting a Post" do
     title = posts(:cr).title
 
     # When the delete link is clicked
-    page.find("[data-method='delete']").click
+    page.find("a[href='#{post_path(posts(:cr))}'][data-method='delete']").click
 
     # Then the post is deleted
     page.wont_have_content title
