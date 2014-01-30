@@ -64,9 +64,13 @@ GEM
     execjs (2.0.2)
     faker (1.2.0)
       i18n (~> 0.5)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     foundation-rails (5.0.3.1)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -101,6 +105,9 @@ GEM
     multi_json (1.8.4)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    omniauth (1.2.1)
+      hashie (>= 1.2, < 3)
+      rack (~> 1.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.3)
@@ -181,11 +188,13 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise!
   faker
+  figaro
   foundation-rails (~> 5.0.3)
   jbuilder (~> 1.2)
   jquery-rails
   launchy
   minitest-rails-capybara
+  omniauth
   pg
   pundit
   rails (= 4.0.2)

@@ -14,6 +14,8 @@ gem 'devise', git: "git://github.com/plataformatec/devise.git"
 gem 'faker'
 gem 'simplecov'
 gem 'pundit'
+gem 'omniauth'
+gem 'figaro'
 
 group :doc do
   gem 'sdoc', require: false
