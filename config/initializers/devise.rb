@@ -13,5 +13,5 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
   config.secret_key = '4cd8bbde3695ffc7ae2bd3daf66325620de3402ffd9ce9f9f33cb44c8452a85ae8323784841d6b125da7d4e2a8d1d109bfb09b2562ff6db36daccf652a8d23ca'
-  config.omniauth :twitter, 'EO6X0ilq6rjEQHoO92wZ7Q', '8C1nTm2MwCJC1DgEn574ZvwlMS9Ygz3DfmxGXsfTcsI'
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
 end

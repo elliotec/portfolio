@@ -22,8 +22,6 @@
 <% @post.comments.each do |comment| %>
   <% if comment.approved %>
   Name:<%= comment.author %>
-  URL:<%= comment.author_url %>
-  Email:<%= comment.author_email %>
   Comment:<%= comment.context %>
   <% end %>
 <% end %>
