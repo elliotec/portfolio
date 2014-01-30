@@ -45,6 +45,9 @@
     <%= f.submit class: "button alert"%>
   </div>
 </div>
+
+<%= f.hidden_field :post_id, :value => params[:id] %>
+
 <% if CommentPolicy.new(current_user, @comment).approver?%>
     <div class="row collapse">
       <div class="small-3 columns">

@@ -9,7 +9,7 @@ feature "sign in as an existing user" do
     #page.find("[type='submit']").click
     page.text.must_include "successfully"
   end
-   scenario "sign in with twitter works" do
+   scenario "signing in with twitter works" do
    visit root_path
    click_on "Sign In"
    OmniAuth.config.test_mode = true
@@ -17,7 +17,7 @@ feature "sign in as an existing user" do
    Capybara.current_session.driver.request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
    OmniAuth.config.add_mock(:twitter,
                             {
-                            uid: '12345',
+                            uid: '123456789',
                             info: { nickname: 'test_twitter_user'},
                             })
    click_on "Sign in with Twitter"

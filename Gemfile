@@ -14,7 +14,7 @@ gem 'devise', git: "git://github.com/plataformatec/devise.git"
 gem 'faker'
 gem 'simplecov'
 gem 'pundit'
-gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'figaro'
 
 group :doc do
