@@ -39,14 +39,3 @@ $(function() {
 		}		
 	);	
 });
-
-
-
-// NICE SCROLL        
-$('html').niceScroll({
-	cursorcolor: '#5f717f',
-	cursorborder: '1px solid #5f717f',
-	cursoropacitymin: '1',
-	scrollspeed: '130',
-	zindex: '9'
-});

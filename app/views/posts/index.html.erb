@@ -45,19 +45,19 @@
         <% end %>
 
 
-          <div class="large-9 columns">
-          
-          <div id="comments">
-            <% @posts.each do |post| %>
+      <div class="large-9 columns">    
+        <div id="comments">
+          <% @posts.each do |post| %>
+            <%# if policy(comment).approved? %>
               <% post.comments.each do |comment| %>
               <div class="comment">
                 <%= comment.context %>
+              </div>
+              <% end %>
             <% end %>
-          <% end %>
-          </div>
-      </article>
+          <%# end %>
         </div>
-    </div>
+      </div>
 
     <!-- End Main Content -->
 
