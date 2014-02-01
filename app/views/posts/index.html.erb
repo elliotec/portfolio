@@ -20,13 +20,10 @@
       <article>
         <tbody>
           <% @posts.each do |post| %>
-        <h3><%= link_to post.title, post %></h3>
-        <h6>Written by <a href="#">Mike Elliott</a> on Jan 28th, 2014.</h6>
-            <% unless post.published %>
-              <p><strong>Unpublished</strong></p>
-              <% end %>
             <tr id="<%= dom_id(post) %>">
+            <% if policy(post).publish? %>
               <td><%= link_to 'Show', post %></td>
+              <h3><%= link_to post.title, post %></h3>
               <td><% if policy(post).update? %>
                  <%= link_to 'Edit', edit_post_path(post) %>
                   <% end %></td>
@@ -35,31 +32,31 @@
                   <% end %></td>
             </tr>
         </tbody>
-          
-
         <div class="row">
-          <div class="large-6 columns">
+          <div class="large-9 columns">
             <p><%= post.body %></p>
-          </div>
-          <div class="large-6 columns">
-           
+              <h6>Written by </h6>
+            <% unless post.published %>
+                <p><strong>Unpublished</strong></p>
+            <% end %>
           </div>
         </div>
+          <% end %>
         <% end %>
 
 
-          <div class="large-6 columns">
+          <div class="large-9 columns">
           
           <div id="comments">
-          <% @posts.each do |post| %>
-          <% post.comments.each do |comment| %>
-          <div class="comment">
-          <%= simple_format comment.context %>
+            <% @posts.each do |post| %>
+              <% post.comments.each do |comment| %>
+              <div class="comment">
+                <%= comment.context %>
             <% end %>
           <% end %>
           </div>
       </article>
-
+        </div>
     </div>
 
     <!-- End Main Content -->

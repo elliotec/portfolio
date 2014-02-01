@@ -7,7 +7,6 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def approver?
-
    if @user
     @user.editor?
    end

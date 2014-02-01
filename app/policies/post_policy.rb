@@ -9,7 +9,7 @@ class PostPolicy < ApplicationPolicy
   def publish?
     if @user
      @user.editor?
-   end
+    end
   end
 
   def destroy?

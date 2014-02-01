@@ -15,6 +15,13 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def publish
+    @post = Post.find(params[:id])
+    @post.published = true
+    @post.save
+    redirect_to posts_url, notice: 'Published!'
+  end
+
   def edit
   end
 
@@ -53,7 +60,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :body, (:published if PostPolicy.new(current_user, @post).publish?))
+      params.require(:post).permit(:title, :body, :author_id, (:published if PostPolicy.new(current_user, @post).publish?))
     end
 
 end
