@@ -13,14 +13,17 @@
   <strong>Body:</strong>
   <%= @post.body %>
   <h1>The quick intro to setting up your testing environment that every Rails tutorial is missing</h1>
-  <p>Something I noticed about almost every Ruby on Rails tutorial (even the best ones!) I used was their little disclaimer in one of the first paragraphs usually going something like "Test Driven Development is considered a best practice in the Rails and Web Development communities, but we aren't going to go over it here." </p>
+  <img src="https://github-camo.global.ssl.fastly.net/e8236a83ae3cd40fd36726b41b9c83ee20162479/687474703a2f2f63646e2e6d657461736b696c6c732e6e65742f6d696e69746573742d737065632d7261696c732e706e67">
+  <p><h4>Something I noticed about almost every Ruby on Rails tutorial</h4> (even the best ones!) I used was their little disclaimer in one of the first paragraphs usually going something like "Test Driven Development is considered a best practice in the Rails and Web Development communities, but we aren't going to go over it here." </p>
   <p>Truth is, most companies use and swear by TDD, often citing the mantra that 20% more testing squashes 80% more bugs. So, hopefully this post can fill that huge gap between learning Rails and professionally using Rails, at least a little bit. </p>
   <p>Assuming you've built a Rails app or two before and know how to get one up and running, lets go over setting up the testing environment. We are going to use MiniTest (https://github.com/seattlerb/minitest), because it's minimal, fast, easy, and built into Ruby. Some people prefer Rspec, I don't. Of course I must recommend trying both to find out your own preference. There is also a nice little gem called Capybara which allows for testing syntax that is more human readable than the default and meshes nicely with your user stories.</p>
-  <p> Start with creating a test group in your gemfile so you don't clog up your other environments with all your tests. In that test group add the all-in-one gem 'minitest-rails-capybara'.</p>
+  <p> <h4>Start with creating a test group in your gemfile</h4> so you don't clog up your other environments with all your tests. In that test group add the all-in-one gem 'minitest-rails-capybara'.</p>
   <p>While you're still in your gemfile go ahead and add gem 'turn' and 'launchy' to the test group. Turn makes the tests look pretty rather than spewing stack trace vomit all over your console and launchy allows you to save and open the page to make debugging a hell of a lot easier.</p>
-  <p>You should have a directory called test in your Rails app. In that directory, there should be a ruby file called test_helper.rb. In there, type the following code at the top of the file: <code>ENV["RAILS_ENV"] = "test" require File.expand_path("../../config/environment", __FILE__) require "rails/test_help" require "minitest/rails/capybara" require "turn"</code></p>
+  <p><h4>You should have a directory called test in your Rails app.</h4> In that directory, there should be a ruby file called test_helper.rb. In there, type the following code at the top of the file: <code>ENV["RAILS_ENV"] = "test" require File.expand_path("../../config/environment", __FILE__) require "rails/test_help" require "minitest/rails/capybara" require "turn"</code></p>
   <p>Now, check out your rakefile and add the following: <code>MiniTest::Rails::Testing.default_tasks &lt;&lt; "features"</code></p>
-  <p>Thats it, your test environment is all set up. Now, every test you create should end in "_test.rb" so minitest can find it. You might as well throw it in a directory called "features" in your test directory to keep yourself organized. Now go create some CRUD tests! When you're ready to run them, just type 'rake' in your command line, and watch the beauty of errors, failures, and passes.</p>
+  <p><h4>Thats it, your test environment is all set up.</h4> Now, every test you create should end in "_test.rb" so minitest can find it. You might as well throw it in a directory called "features" in your test directory to keep yourself organized. Now go create some CRUD tests! When you're ready to run them, just type 'rake' in your command line, and watch the beauty of errors, failures, and passes.</p>
+
+  <img src="http://b.repl.ca/v1/build-passing-brightgreen.png">
 </p>
 
 <p id="author">
