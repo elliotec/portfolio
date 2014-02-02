@@ -21,13 +21,13 @@
         <tbody>
           <% @posts.each do |post| %>
             <tr id="<%= dom_id(post) %>">
-            <% if policy(post).publish? %>
+            <% if post.published? || policy(post).index? %>
               <td><%= link_to 'Show', post %></td>
               <h3><%= link_to post.title, post %></h3>
-              <td><% if policy(post).update? %>
+              <td><% if current_user && policy(post).update? %>
                  <%= link_to 'Edit', edit_post_path(post) %>
                   <% end %></td>
-              <td><% if policy(post).destroy? %>
+              <td><% if current_user && policy(post).destroy? %>
                   <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                   <% end %></td>
             </tr>
