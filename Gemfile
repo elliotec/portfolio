@@ -9,7 +9,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'minitest-rails-capybara'
 gem 'foundation-rails', '~> 5.0.3'
-gem 'better_errors'
 gem 'devise', git: "git://github.com/plataformatec/devise.git"
 gem 'faker'
 gem 'simplecov'
@@ -23,6 +22,8 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do

@@ -1,4 +1,4 @@
-<%= form_for(@comment) do |f| %>
+<%= form_for([@post,@comment]) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -10,53 +10,14 @@
       </ul>
     </div>
   <% end %>
-<div class="row">
-  <div class="large-6 columns">
-    <%= f.label :author, "Name" %><br>
-    <%= f.text_field :author %>
-  </div>
-</div>
-<div class="row">
-  <div class="large-12 columns">
-    <%= f.label :author_url, "URL" %><br>
-    <%= f.text_field :author_url %>
-  </div>
-</div>
-<div class="row">
-  <div class="large-12 columns">
-    <%= f.label :author_email, "Email" %><br>
-    <%= f.text_field :author_email %>
-  </div>
-</div>
-<div class="row">
-  <div class="large-12 columns">
-    <%= f.label :referrer, "Referred by:" %><br>
-    <%= f.text_field :referrer %>
-  </div>
-</div>
-<div class="row">
-  <div class="large-12 columns">
+
+<div class="field">
     <%= f.label :context, "Comment" %><br>
     <%= f.text_area :context %>
-  </div>
 </div>
-<div class="row">
-  <div class="small-4 columns">
+
+<div class="actions">
     <%= f.submit class: "button alert"%>
-  </div>
 </div>
 
-<%= f.hidden_field :post_id, :value => params[:id] %>
-
-<% if CommentPolicy.new(current_user, @comment).approver?%>
-    <div class="row collapse">
-      <div class="small-3 columns">
-        <%= f.label :approved, class: "right inline", title: "Is this post approved?", data: {tooltip: true } %><br>
-      </div>
-
-      <div class="small-9 columns">
-        <%= f.check_box :approved %>
-      </div>
-    </div>
-  <% end %>
 <% end %>

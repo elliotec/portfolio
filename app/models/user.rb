@@ -14,11 +14,16 @@ class User < ActiveRecord::Base
     role == 'editor'
   end 
 
+  def twitterman?
+    role == 'twitterman'
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = "#{user.name}-CHANGEME@twitter.example.com"
+      user.role = 'twitterman'
     end
   end
 

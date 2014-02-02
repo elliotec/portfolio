@@ -7,21 +7,21 @@ class PostPolicy < ApplicationPolicy
   end
 
   def publish?
-    if @user
+    #if @user
      @user.editor?
-    end
+    #end
   end
 
   def destroy?
-    if @user
+    #if @user
       @user.editor?
-    end
+    #end
   end
 
   def update?
-    if @user
+    #if @user
       @user.editor?
-    end
+    #end
   end
 
 end
