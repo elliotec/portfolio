@@ -14,10 +14,10 @@
 
 /* BODY STYLE */
 body {
-	background-color: #595959;
+	background-color: white;
 	font-family: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 0.875rem;
-	color: #ffffff;
+	color: #595959;
 	padding-top: 4.063rem;
 }
 
@@ -86,13 +86,13 @@ h5,
 h6 {
 	font-family: "Raleway-Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-weight: 400;
-	color: #E8E8E8;
+	color: #343434;
 }
 
 h4 {
 	font-family: "Raleway-Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-weight: 400;
-	color: #595959;
+	color: #fff;
 }
 
 p {
@@ -391,10 +391,9 @@ textarea {
 }
 
 
-
 /* PORTFOLIO */
 .portfolio-wrapper {
-	background-color: #fff;
+	background-color: #444;
 	text-align: center;
 	border-top: 1px solid #e2e2e2;
 	border-bottom: 1px solid #e2e2e2;
@@ -456,8 +455,6 @@ textarea {
 	overflow: hidden;
 }
 
-
-
 /* ABOUT */
 .about-wrapper {
 	background-color: transparent;
@@ -480,35 +477,6 @@ textarea {
 	margin-top: 2.188rem;
 }
 
-
-
-/* LATEST TWEETS */
-.tweets-wrapper {
-	background-color: #fff;
-	text-align: center;
-	border-top: 1px solid #e2e2e2;
-	border-bottom: 1px solid #e2e2e2;
-	padding: 4.063rem 0 1.75rem;
-}
-	.tweets-wrapper img {
-		display: block;
-		width: 70px;
-		height: auto;
-		margin: 0 auto 1.875rem;
-	}
-#tweets {
-	margin-bottom: 2.188rem;
-}
-	#tweets ul {
-		list-style: none;
-		padding: 0;
-	}
-		#tweets p.tweet {
-			font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-			font-size: 1.625rem;
-			font-style: italic;
-			line-height: 2.25rem;
-		}
 /** Effect **/
 .pulse {
 	-webkit-animation-name: pulse;
