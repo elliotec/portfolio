@@ -698,6 +698,9 @@ textarea {
 				color: #fff;
 			}
 
+#projects {
+	list-style-type: none;
+}
 
 
 /* #Media queries are built using ems in Foundation.
