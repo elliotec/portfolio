@@ -32,7 +32,7 @@
       <tr id="<%= dom_id(post) %>">
       <% if post.published? || policy(post).index? %>
         <td><h3><%= link_to post.title, post %></h3></td>
-        <td><p><%= post.body %></p>
+        <td><p><%= markdown_filter post.body %></p>
         <td><%= localize post.created_at, format: :pretty %></td>
         <td><% unless post.published %></td>
         <td><p><strong>Unpublished</strong></p>
