@@ -15,6 +15,7 @@ gem 'simplecov'
 gem 'pundit'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'kramdown'
 
 group :doc do
   gem 'sdoc', require: false
