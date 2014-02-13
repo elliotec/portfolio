@@ -15,3 +15,20 @@
  *= require main
  *= require_tree .
  */
+.simple_form label {
+  float: left;
+  width: 100px;
+  margin: 2px 10px;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+}
+
+.simple_form div.boolean, .simple_form input[type='submit'] {
+  margin-left: 120px;
+  margin-bottom: 40px;
+}
+li {
+  list-style-type: none;
+}

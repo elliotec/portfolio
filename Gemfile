@@ -16,6 +16,7 @@ gem 'pundit'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'kramdown'
+gem 'simple_form'
 
 group :doc do
   gem 'sdoc', require: false
