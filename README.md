@@ -22,3 +22,6 @@ Here is the root as of 1-16-14:
 
 Bottom of index at 1-19-14:
 ![Index screenshot](https://www.dropbox.com/s/t56o4y3h915qu6i/iconshot.png?dl=1 "Index screenshot")
+
+Posts page at 2-12-14:
+![Posts screenshot](https://www.dropbox.com/s/zjxcws4lhfdurn6/posts.png?dl=1 "Posts screenshot")
