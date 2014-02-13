@@ -423,7 +423,7 @@ textarea {
 			}	
 				.portfolio .label-text {
 					position: relative;
-					color: #fff;
+					color: #595959;
 					padding: 0.75rem 8px;
 					z-index: 96;
 				}
@@ -774,4 +774,8 @@ textarea {
 	#tweets p.tweet {
 		font-size: 1.125rem;
 	}
+}
+
+label {
+	color: #595959;
 }
