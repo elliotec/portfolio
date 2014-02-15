@@ -17,6 +17,7 @@ gem 'omniauth-twitter'
 gem 'figaro'
 gem 'kramdown'
 gem 'simple_form'
+gem 'browser-timezone-rails'
 
 group :doc do
   gem 'sdoc', require: false

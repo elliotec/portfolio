@@ -50,6 +50,6 @@ private
   end
 
   def comment_params
-    params.require(:comment).permit(:context, (:approved if CommentPolicy.new(current_user, @comment).approver?), :post_id, :created_at, :updated_at)
+    params.require(:comment).permit(:context, (:approved if CommentPolicy.new(current_user, @comment).approver?), :post_id, :created_at, :updated_at, :locale)
   end
 end

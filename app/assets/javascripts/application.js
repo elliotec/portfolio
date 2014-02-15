@@ -16,6 +16,7 @@
 //= require plugin
 //= require main
 //= require turbolinks
+//= require browser_timezone_rails/application.js
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
