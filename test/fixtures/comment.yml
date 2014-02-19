@@ -4,7 +4,6 @@ cmt:
   author_email: "jack@benimble.com"
   referrer: "Mike"
   context: "I change shapes."
-  post: cr
 
 com:
   author: "Bob"
@@ -12,4 +11,3 @@ com:
   author_email: "bob@benimble.com"
   referrer: "Jack"
   context: "I also change shapes."
-  post: http

@@ -19,6 +19,7 @@ gem 'kramdown'
 gem 'simple_form'
 gem 'browser-timezone-rails'
 gem 'pry-rails'
+gem 'pry-plus'
 
 group :doc do
   gem 'sdoc', require: false

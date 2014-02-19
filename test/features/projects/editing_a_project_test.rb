@@ -14,7 +14,7 @@ feature "As a site owner, I want to be able to edit a project so that I can corr
 
   scenario "incorrectly editing an existing project" do
     visit edit_project_path(projects(:portfolio))
-      fill_in "Name", with: "Er"
+      fill_in "Name", with: "E"
       click_on "Update Project"
       page.text.must_include "prohibited"
       page.text.must_include "Name is too short"

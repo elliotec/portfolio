@@ -16,5 +16,3 @@ class ActiveSupport::TestCase
     page.find("[type='submit']").click 
   end
 end
-
-Turn.config.format = :progress
