@@ -1,7 +1,8 @@
-<% flash.each do |key, value| %>
-  <div class="alert-box round <%= flash_class(key) %>">
-        <%= value %>
-  </div> 
-<% end %>
 <h2><%= @project.name %></h2>
 <p>Technologies used: <%= @project.technologies_used %></p>
+
+<%= render "comments/comments_form" %>
+<%= render "comments/table" %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

@@ -5,10 +5,10 @@
       <tr id="<%= dom_id(comment) %>">
         <td><%= comment.context %></td>
         <% if policy(comment).update? %>
-          <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+          <td><%= link_to 'Edit', polymorphic_path([@commentable, comment]) %></td>
         <% end %>
         <% if policy(comment).destroy? %>
-          <td><%= link_to 'Destroy', post_comment_path(@post, comment),
+          <td><%= link_to 'Destroy', polymorphic_path([@commentable, comment]),
                   method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         <td>

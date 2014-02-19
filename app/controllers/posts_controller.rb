@@ -65,7 +65,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-
       params.require(:post).permit(:title, :body, :locale, (:published if PostPolicy.new(current_user, @post).publish?))
     end
 

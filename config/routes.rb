@@ -5,7 +5,7 @@ Portfolio2::Application.routes.draw do
   end
 
   resources :projects do
-    :comments
+    resources :comments
   end
     
    

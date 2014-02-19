@@ -16,11 +16,6 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
 
-    # @post = Post.find(params[:post_id])
-    # @comment = @post.comments.build(comment_params)
-    #authorize @comment
-
-
     if @comment.save
       redirect_to @commentable, notice: "Successfully saved comment."
     else
@@ -30,23 +25,35 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:post_id])
+    #@post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comment.approve!
     if @comment.update(comment_params)
-      redirect_to @post, notice: 'Successfully approved comment.'
+      redirect_to @commentable, notice: 'Successfully approved comment.'
     else
-      redirect_to @post, notice: 'Error approving comment.'
+      redirect_to @commentable, notice: 'Error approving comment.'
+    end
+  end
+
+  def show
+    @comments = @commentable.comments
+    @post = Post.find(params[:post_id])
+    @project = Project.find(project_params)
+    @comment = @commentable.comments.find(params[:id])
+    #authorize @comment
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @comment }
     end
   end
 
   def destroy
     set_comment
-    @post = @comment.post
     if @comment.destroy
-      redirect_to @post, notice: 'Deleted comment'
+      redirect_to @commentable, notice: 'Deleted comment'
     else
-      redirect_to @post, notice: 'Error deleting comment'
+      redirect_to @commentable, notice: 'Error deleting comment'
     end
   end
 

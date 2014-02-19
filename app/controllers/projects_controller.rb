@@ -33,6 +33,9 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @commentable = @project
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def edit
@@ -41,9 +44,15 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    if @project.update_attributes(project_params)
-      redirect_to @project, notice: 'Project was successfully updated'
-    else render :edit
+
+    if @project.update(project_params)
+      flash[:notice] = "Project was successfully updated."
+      respond_to do |format|
+        format.html { redirect_to projects_url }
+        format.js
+      end
+    else
+      render :edit
     end
   end
 
@@ -62,6 +71,6 @@ private
     end
 
     def project_params
-      params.require(:project).permit(:name,:technologies_used,:locale)
+      params.require(:project).permit(:name, :technologies_used, :locale)
     end
   end
