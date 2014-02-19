@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
   end
 
   def show
+    @post = Post.find(params[:id])
+    @commentable = @post
+    @comments = @commentable.comments
     @comment = Comment.new
-    @comments = @post.comments
   end
 
   def new
@@ -38,6 +40,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -47,6 +50,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    authorize @post
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url }
@@ -56,10 +61,11 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.find(params[:id])
+      @resource, id = request.path.split('/')[2,3]
     end
 
     def post_params
+
       params.require(:post).permit(:title, :body, :locale, (:published if PostPolicy.new(current_user, @post).publish?))
     end
 

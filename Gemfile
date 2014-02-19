@@ -18,6 +18,7 @@ gem 'figaro'
 gem 'kramdown'
 gem 'simple_form'
 gem 'browser-timezone-rails'
+gem 'pry-rails'
 
 group :doc do
   gem 'sdoc', require: false

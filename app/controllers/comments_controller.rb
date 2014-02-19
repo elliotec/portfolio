@@ -1,20 +1,31 @@
 class CommentsController < ApplicationController
+  before_filter :load_commentable
   def index
-    @comment = Comment.all
+    @post = Post.find(params[:post_id])
+    @project = Project.find(project_params)
+    @comments = @commentable.comments
   end
 
   def new
-    @comment = Comment.new
+    @post = Post.find(params[:post_id])
+    @comment = @commentable.comments.new
+    authorize @comment
+
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.build(comment_params)
-    authorize @comment
+    @comment = @commentable.comments.new(comment_params)
+
+    # @post = Post.find(params[:post_id])
+    # @comment = @post.comments.build(comment_params)
+    #authorize @comment
+
+
     if @comment.save
-      redirect_to @post, notice: "Successfully saved comment."
+      redirect_to @commentable, notice: "Successfully saved comment."
     else
-      redirect_to @post, notice: 'Error saving comment.'
+      instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
+      render template: "#{@resource}/show"
     end
   end
 
@@ -41,6 +52,7 @@ class CommentsController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
+    @comment = @commentable.comments.finde(params[:id])
   end
 
 private
@@ -50,6 +62,11 @@ private
   end
 
   def comment_params
-    params.require(:comment).permit(:context, (:approved if CommentPolicy.new(current_user, @comment).approver?), :post_id, :created_at, :updated_at, :locale)
+    params.require(:comment).permit(:context, (:approved if CommentPolicy.new(current_user, @comment).approver?), :created_at, :updated_at, :locale, :commentable_id, :author)
+  end
+
+  def load_commentable
+    @resource, id = request.path.split('/')[2,3]
+    @commentable = @resource.singularize.classify.constantize.find(id)
   end
 end
