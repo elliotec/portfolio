@@ -8,7 +8,10 @@ SimpleCov.start 'rails'
 
 class ActiveSupport::TestCase
   fixtures :all
-  # Add more helper methods to be used by all tests here...
+  #I18n.locale = :en
+
+  Rails.application.routes.default_url_options = { :locale => :en }
+
   def sign_in(role = :editor)
     visit new_user_session_path
     fill_in "Email", with: users(role).email

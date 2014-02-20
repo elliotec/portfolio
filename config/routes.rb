@@ -1,5 +1,5 @@
 Portfolio2::Application.routes.draw do
-
+#scope ":locale" do
   resources :posts do
     resources :comments
   end
@@ -7,7 +7,9 @@ Portfolio2::Application.routes.draw do
   resources :projects do
     resources :comments
   end
+#end
     
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   root 'welcome#index'
+
 end

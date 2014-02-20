@@ -25,7 +25,6 @@ class CommentsController < ApplicationController
   end
 
   def update
-    #@post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comment.approve!
     if @comment.update(comment_params)
@@ -73,7 +72,7 @@ private
   end
 
   def load_commentable
-    @resource, id = request.path.split('/')[2,3]
+    @resource, id = request.path.split('/')[1,2]
     @commentable = @resource.singularize.classify.constantize.find(id)
   end
 end

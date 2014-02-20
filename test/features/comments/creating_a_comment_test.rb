@@ -3,7 +3,6 @@ require "test_helper"
 feature "Creating a comment" do
   scenario "as a site visitor i want to create a comment on a post" do
     sign_in(:editor)
-    binding.pry
     visit post_path(posts(:cr))
     
     fill_in "Comment", with: comment(:cmt).context
