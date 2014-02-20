@@ -21,6 +21,7 @@ gem 'browser-timezone-rails'
 gem 'pry-rails'
 gem 'pry-plus'
 gem 'paperclip', '~> 3.0'
+gem 'aws-sdk'
 
 group :doc do
   gem 'sdoc', require: false
