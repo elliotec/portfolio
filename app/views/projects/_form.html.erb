@@ -1,19 +1,26 @@
-<%= simple_form_for(@project, remote: true) do |f| %>
+<%= form_for @project, remote: true, html: { multipart: true } do |f| %>
  <% if @project.errors.any? %>
   <div id="error_explanation">
    <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
 
    <% @project.errors.full_messages.each do |msg| %>
     <%= msg %>
     <% end %>
 
   </div>
-  <% end %>
-  <div class="row">
-    <div class="large-9 columns">
-      <%= f.input :name %>
-      <%= f.input :technologies_used, hint: "Must be longer than 2 characters" %>
+ <% end %>
+   <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="large-12 columns">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="large-12 columns">
+      <%= f.label :technologies_used %>
+      <%= f.text_field :technologies_used %>
       <%= f.button :submit %>
     </div>
   </div>

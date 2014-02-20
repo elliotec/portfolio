@@ -14,6 +14,10 @@ feature "Creating a comment" do
   scenario "editors can approve comments" do
     sign_in(:editor)
     visit post_path(posts(:http))
+    fill_in "Comment", with: comment(:cmt).context
+    # When I submit the form
+    click_on "Create Comment"
+    page.must_have_content('Successfully')
     
     click_on 'Approve'
   end

@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'minitest-rails-capybara'
 gem 'foundation-rails', '~> 5.0.3'
-gem 'devise', git: "git://github.com/plataformatec/devise.git"
+gem 'devise'
 gem 'faker'
 gem 'simplecov'
 gem 'pundit'
@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'browser-timezone-rails'
 gem 'pry-rails'
 gem 'pry-plus'
+gem 'paperclip', '~> 3.0'
 
 group :doc do
   gem 'sdoc', require: false

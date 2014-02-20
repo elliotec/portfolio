@@ -6,7 +6,7 @@ feature "As a site owner, I want to be able to edit a project so that I can corr
     visit edit_project_path(projects(:portfolio))
     # When I make changes
     fill_in "Name", with: "Sweet Portfolio!"
-    click_on "Update Project"
+    click_on :submit
     # Then the changes should be saved and shown
     page.text.must_include "Sweet Portfolio!"
     page.text.wont_include "Legitimizable"
@@ -15,7 +15,7 @@ feature "As a site owner, I want to be able to edit a project so that I can corr
   scenario "incorrectly editing an existing project" do
     visit edit_project_path(projects(:portfolio))
       fill_in "Name", with: "E"
-      click_on "Update Project"
+      click_on :submit
       page.text.must_include "prohibited"
       page.text.must_include "Name is too short"
   end
