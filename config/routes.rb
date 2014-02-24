@@ -12,4 +12,6 @@ Portfolio2::Application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   root 'welcome#index'
 
+  match 'contact' => 'contact#new', via: :get
+  match 'contact' => 'contact#create', via: :post
 end
