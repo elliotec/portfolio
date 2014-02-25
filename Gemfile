@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.0'
 
 gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
@@ -18,8 +19,6 @@ gem 'figaro'
 gem 'kramdown'
 gem 'simple_form'
 gem 'browser-timezone-rails'
-gem 'pry-rails'
-gem 'pry-plus'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk'
 
@@ -29,6 +28,8 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'pry-rails'
+  gem 'pry-plus'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
