@@ -15,7 +15,7 @@ feature "Creating a post" do
     page.text.must_include posts(:cr).title
     page.has_css? '#author'
     page.text.must_include users(:author).email
-    page.text.must_include "Status: Unpublished"
+    page.text.must_include "Unpublished"
   end
 
   scenario "unauthenticated site visitors cannot visit new_post_path" do
@@ -31,7 +31,7 @@ feature "Creating a post" do
   scenario "authors can't publish" do
     sign_in(:author)
     visit new_post_path
-    page.wont_have_field('published')
+    page.wont_have_field('Published')
   end
 
   scenario "editors can publish" do
@@ -43,6 +43,6 @@ feature "Creating a post" do
     fill_in "Body", with: posts(:cr).body
     check "Published"
     click_on "Create Post"
-    page.text.must_include "Status: Published"
+    page.text.wont_include "Unpublished"
   end
 end
