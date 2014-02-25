@@ -24,7 +24,8 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: 'Published!'
   end
 
-  def edit
+  def edit  
+    @post = Post.find(params[:id])
   end
 
   def create
