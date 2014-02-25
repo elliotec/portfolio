@@ -17,6 +17,6 @@ feature "As a site owner, I want to be able to edit a project so that I can corr
       fill_in "Name", with: "E"
       click_on :submit
       page.text.must_include "prohibited"
-      page.text.must_include "Name is too short"
+      page.text.must_include "too short"
   end
 end
