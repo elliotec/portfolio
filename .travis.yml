@@ -2,3 +2,5 @@ deploy:
   provider: heroku
   app: elliotec
   api_key: "cb8b4abc-6025-498c-b01b-6a9caef1c427"
+  env:
+  SECRET_KEY_BASE="$(bundle exec rake secret)"

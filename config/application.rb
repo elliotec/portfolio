@@ -15,5 +15,6 @@ module Portfolio2
   class Application < Rails::Application
     I18n.enforce_available_locales = false
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.secret_key_base
   end
 end
