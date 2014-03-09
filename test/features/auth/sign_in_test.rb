@@ -6,7 +6,6 @@ feature "sign in as an existing user" do
     fill_in "Email", with: users(:us).email
     fill_in "Password", with: "password1"
     click_on "Sign in"
-    #page.find("[type='submit']").click
     page.text.must_include "successfully"
   end
    scenario "signing in with twitter works" do

@@ -8,4 +8,3 @@ feature "Check for columns" do
   end
 end
   
-
